@@ -1,0 +1,9 @@
+[package]
+name = "specs-bench"
+version = "0.1.0"
+authors = ["Jacob Kiesel <kieseljake@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+specs = "0.14"
+rand = "0.6"
