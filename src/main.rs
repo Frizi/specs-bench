@@ -66,6 +66,24 @@ fn main() {
             }
             builder.build();
         }
+        // Randomly delete and re-allocate 50% of the top 20% of entities.
+        for j in (CAPACITY * 8/10)..CAPACITY {
+            if random::<bool>() {
+                let e = world.entities().entity(j);
+                if world.is_alive(e) && world.read_storage::<VecComponent>().contains(e) {
+                    world.delete_entity(e);
+                    let value = random::<u32>();
+                    world.create_entity()
+                    .with(VecComponent(value))
+                    .with(DenseVecComponent(value))
+                    .with(BTreeComponent(value))
+                    .with(HashMapComponent(value))
+                    .with(NullStorageComponent)
+                    .build();
+                    data[j as usize] = Some(value);
+                }
+            }
+        }
 
         let mut vec_out = Vec::with_capacity(CAPACITY as usize);
         let mut start = Instant::now();

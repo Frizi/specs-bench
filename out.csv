@@ -1,5 +1,0 @@
-Percent Filled, Vec iter time, DenseVec iter time, BTree iter time, HashMap iter time, Null iter time
-0%, 11, 3, 2, 2, 2
-1%, 32210, 35225, 176714, 97549, 21211
-2%, 55813, 59795, 370976, 194708, 37332
-3%, 72764, 78975, 586768, 283169, 50833
